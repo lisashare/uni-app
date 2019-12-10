@@ -1,0 +1,308 @@
+.aft:after {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  content: "...";
+}
+a {
+  text-decoration: none;
+  color: #666;
+}
+a:hover {
+  opacity: .9;
+  filter: alpha(opacity=90);
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.clear:after,
+.clear:before {
+  content: "";
+  display: table;
+}
+.clear:after {
+  clear: both;
+}
+
+
+// zhujie
+@rem: 50rem;
+.overHidden{
+  height: 100%;
+  overflow: hidden!important;
+}
+.over{
+  overflow: hidden;
+}
+.page-top{
+  padding-top: 88/@rem;
+}
+.bc{
+  background: #ffffff!important;
+}
+.ellipsis{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.font-w7{
+  font-weight: 700;
+}
+// 头部1px下边框
+.line-bottom:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: #bfbfbf ;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+  -webkit-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+}
+.line-bottom-bc01:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: #dae0e6 ;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+  -webkit-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+}
+.border{
+  border-top: 1px solid #dae0e6;
+  border-bottom: 1px solid #dae0e6;
+}
+.border-top{
+  border-top: 1px solid #dae0e6;
+}
+.border-bt{
+  border-bottom: 1px solid #dae0e6;
+}
+
+.img-bg{ // 背景图片
+  background-size:100% 100%;
+  background-position:center center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.loading-animation{
+  position: relative;
+  // width: 150/@rem;
+  width: 169/@rem;
+  // height: 208/@rem;
+  height: 230/@rem;
+  p{  
+    position: absolute;
+    bottom: 0;
+    // width: 150/@rem;
+    width: 169/@rem;
+    text-align: center;
+    font-size: 24/@rem;
+    line-height: 24/@rem;
+    color: #999999;
+  }
+  .loading-img{
+      position: absolute;
+      width: 169/@rem;
+      height: 169/@rem;
+      // width: 150/@rem;
+      // height: 150/@rem;
+  }
+  @keyframes rotation{
+      from {transform: rotate(0deg);}
+      to {transform: rotate(360deg);}
+  }
+  .Rotation{
+      transform: rotate(360deg);
+      animation: rotation 2s linear infinite;
+      -moz-animation: rotation 2s linear infinite;
+      -webkit-animation: rotation 2s linear infinite;
+      -o-animation: rotation 2s linear infinite;
+  }
+}
+.icon-back{
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 64/@rem;
+    height: 88/@rem;
+    background-image:url('/static/images/common/icon_back@3x.png');
+    background-size: 16/@rem 28/@rem;
+    background-position:center center;
+    background-repeat: no-repeat;
+}
+// 头部公用样式
+.search-header{
+  box-sizing: border-box;
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 88/@rem;
+  padding: 16/@rem 174/@rem;
+  z-index: 11;
+  .search-inp {
+    position: relative;
+    height: 56/@rem;
+    background: #F7F7F7;
+    border-radius: 28/@rem;
+    input{
+        width: 80%;
+        height: 56/@rem;
+        font-size: 24/@rem;
+        color: #999999;
+        background: #F7F7F7;
+    }
+  }
+  &.sear{  // 商机假搜索
+    padding-left: 125/@rem;
+    padding-right: 0;
+    
+    .search-inp{
+      width: 500/@rem!important;
+      padding-left: 54/@rem!important;
+    }
+    .header-contact-customer{
+      right: 44/@rem;   // 商机页面  42px
+    }
+  }
+  &.real-search{
+     padding-left: 104/@rem;
+     padding-right: 0;
+     .search-inp{
+        width: 542/@rem;
+        padding-left: 72/@rem!important;
+    }
+  }
+  .header-contact-customer{
+    width: 70/@rem;
+    height: 88/@rem;
+    top: 0;
+    right: 22/@rem;  // 我的页面 12   54px
+    background-image: url('/static/images/common/icon_erji@3x.png');
+    background-repeat: no-repeat;
+    background-size: 34/@rem 32/@rem;
+    background-position: center;
+    display: inline-block;
+    position: absolute;
+    z-index: 11;
+  }
+  .header-nav{
+    display: inline-block;
+    position: absolute;
+    width: 84/@rem;
+    height: 88/@rem;
+    top: 0;
+    right: 0;
+    background-image: url('/static/images/common/icon_classify@3x.png');
+    background-repeat: no-repeat;
+    background-size: 36/@rem 28/@rem;
+    background-position: center;
+  }
+  h2{
+    font-size: 36/@rem;
+    color: #333333;
+    text-align: center;
+    height: 56/@rem;
+    line-height: 56/@rem;
+  }
+  .icon-left{
+      position:absolute;
+      top: 0;
+      left: 0;
+      width: 64/@rem;
+      height: 88/@rem;
+      background-image:url('/static/images/common/icon_back@3x.png');
+      background-size: 16/@rem 28/@rem;
+      background-position:center center;
+      background-repeat: no-repeat;
+  }
+  .icon-left-white{
+    background-image:url('/static/images/common/Back@2x.png');
+  }
+  i { 
+      display: inline-block;
+      vertical-align: middle;
+      background-size: 100% 100%;
+      background-position:center center;
+      background-repeat: no-repeat;
+  }
+  .fdj{
+      position: absolute;
+      right: 45/@rem;
+      top: 50%;
+      -webkit-transform: translate3d(0, -50%, 0);
+      -ms-transform: translate3d(0, -50%, 0);
+      transform: translate3d(0, -50%, 0);
+      display: inline-block;
+      width: 20/@rem;
+      height: 21/@rem;
+      background-image: url('/static/images/opportunity/icon/icon_ss@3x.png');
+  }
+}
+
+.search-txt {
+  display: inline-block;
+  width: 104/@rem;
+  text-align: center;
+  font-size: 30/@rem;
+  line-height: 88/@rem;
+  color: #333333;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 11;
+}
+// input close
+.el-input-clear {
+  display: none;
+  position: absolute;
+  top: 50%;
+  right: 20/@rem;
+  width: 30/@rem;
+  height: 30/@rem;
+  margin-top: -15/@rem;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+.el-input-clear:before {
+  width: 70%;
+  height: 1px;
+}
+.el-input-clear:before{
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: #333333;
+}
+.el-input-clear:after {
+  width: 1px;
+  height: 70%;
+  color: #333333;
+}
+.el-input-clear:after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: #333333;
+}
+
+
