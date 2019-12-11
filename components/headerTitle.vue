@@ -13,7 +13,46 @@
 </template>
 
 <script>
+	export default {
+		data() {
+			return {}
+		},
+		methods: {
+			goback: function () {
+				uni.navigateBack({
+					delta: 1
+				})
+			}
+		}
+	}
 </script>
 
 <style>
+	header {
+		height: 128px;
+		width: 100%;
+		display: flex;
+		box-sizing: border-box;
+		padding-top: 20px;
+		align-items: center;
+		background-color: #fff;
+		box-shadow: 0px 4px 8px 0px rgba(238, 238, 238, 0.5);
+	}
+	.header image{
+		width: 40px;
+		height: 40px;
+	}
+	.header-left,
+	.header-right {
+		width: 88px;
+		height: 88px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.header-content {
+		flex: 1;
+		font-size: 36px;
+		text-align: center;
+	}
 </style>

@@ -3,14 +3,75 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				// "navigationBarTitleText": "uni-app"
+			}
+		},
+	    {
+			"path": "pages/recommend/recommend",
+			"style": {
+				"navigationBarTitleText"："推荐"
+			}
+		},
+		{
+			"path": "pages/hot/hot",
+			"style": {
+				
+			}
+		},
+		{
+			"path": "pages/search/search",
+			"style": {
+			}
+		},
+		{
+			"path": "pages/mine/mine", 
+			"style": {
+				
 			}
 		}
 	],
-	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
+	"tabBar": {
+		"color":"#8a8a8a",
+		"selectedColor":"#d4237a",
+		"borderStyle":"grap",
+		"backgroundColor":"#ffffff",
+		"list": [
+			{
+				"pagePath":"pages/index/index",
+				"text":"首页",
+				"iconPath":"static/home_normal.png",
+				"selectedIconPath":"static/home.png"
+			},
+			{
+				"pagePath":"pages/search/search",
+				"text":"搜索",
+				"iconPath":"static/search_normal.png",
+				"selectedIconPath":"static/search.png"
+			},
+			{
+				"pagePath":"pages/hot/hot",
+				"text":"热歌",
+				"iconPath":"static/paihangbang_normal.png",
+				"selectedIconPath":"static/paihangbang.png"
+			},
+			{
+				"pagePath":"pages/recommend/recommend",
+				"text":"推荐",
+				"iconPath":"static/alert_normal.png",
+				"selectedIconPath":"static/alert.png"
+			},
+			{
+				"pagePath":"pages/me/me",
+				"text":"我的",
+				"iconPath":"static/me_normal.png",
+				"selectedIconPath":"static/me.png"
+			}
+		]
 	}
+	// "globalStyle": {
+	// 	"navigationBarTextStyle": "black",
+	// 	"navigationBarTitleText": "uni-app",
+	// 	"navigationBarBackgroundColor": "#F8F8F8",
+	// 	"backgroundColor": "#F8F8F8"
+	// }
 }
