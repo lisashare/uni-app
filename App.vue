@@ -14,5 +14,11 @@
 
 <style>
 	/*每个页面公共css */
-	import './static/iconfont/iconfont.css';
+	@import "./static/iconfont/iconfont.css";
+	/* #ifdef H5 */
+	uni-page-head
+	{
+		display: none;
+	}
+	/* #endif */
 </style>

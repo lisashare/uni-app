@@ -9,7 +9,7 @@
 	    {
 			"path": "pages/recommend/recommend",
 			"style": {
-				"navigationBarTitleText"："推荐"
+				// "navigationBarTitleText":"推荐"
 			}
 		},
 		{
@@ -33,38 +33,38 @@
 	"tabBar": {
 		"color":"#8a8a8a",
 		"selectedColor":"#d4237a",
-		"borderStyle":"grap",
+		"borderStyle":"black",
 		"backgroundColor":"#ffffff",
 		"list": [
 			{
 				"pagePath":"pages/index/index",
 				"text":"首页",
-				"iconPath":"static/home_normal.png",
-				"selectedIconPath":"static/home.png"
-			},
-			{
-				"pagePath":"pages/search/search",
-				"text":"搜索",
-				"iconPath":"static/search_normal.png",
-				"selectedIconPath":"static/search.png"
-			},
-			{
-				"pagePath":"pages/hot/hot",
-				"text":"热歌",
-				"iconPath":"static/paihangbang_normal.png",
-				"selectedIconPath":"static/paihangbang.png"
+				"iconPath":"static/images/home_normal.png",
+				"selectedIconPath":"static/images/home.png"
 			},
 			{
 				"pagePath":"pages/recommend/recommend",
 				"text":"推荐",
-				"iconPath":"static/alert_normal.png",
-				"selectedIconPath":"static/alert.png"
+				"iconPath":"static/images/cascades_normal.png",
+				"selectedIconPath":"static/images/cascades.png"
 			},
 			{
-				"pagePath":"pages/me/me",
+				"pagePath":"pages/search/search",
+				"text":"搜索",
+				"iconPath":"static/images/search_normal.png",
+				"selectedIconPath":"static/images/search.png"
+			},
+			{
+				"pagePath":"pages/hot/hot",
+				"text":"热歌",
+				"iconPath":"static/images/hot_normal.png",
+				"selectedIconPath":"static/images/hot.png"
+			},
+			{
+				"pagePath":"pages/mine/mine",
 				"text":"我的",
-				"iconPath":"static/me_normal.png",
-				"selectedIconPath":"static/me.png"
+				"iconPath":"static/images/friendfavor_normal.png",
+				"selectedIconPath":"static/images/friendfavor.png"
 			}
 		]
 	}
