@@ -4,15 +4,20 @@
 		<view class="text-area">
 			<text class="title">{{title}}</text>
 		</view>
+		<recommend-item></recommend-item>
 	</view>
 </template>
 
 <script>
+	import recommendItem from './recommendItem.vue';
 	export default {
 		data() {
 			return {
-				title: 'Hello'
+				title: '推荐'
 			}
+		},
+		components:{
+			recommendItem
 		},
 		onLoad() {
 
