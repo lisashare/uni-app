@@ -1,11 +1,7 @@
 <template>
 	<view class="content">
 		<!-- #ifdef H5 -->
-		<view class="header">
-			<view class="header-content uni-ellipsis">
-				{{title}}
-			</view>
-		</view>
+		<header-title :title="title" :showback="false"></header-title>
 		<view class="paddingTop"></view>
 		<!-- #endif -->
 		<view class="uni-list">
@@ -25,6 +21,7 @@
 </template>
 
 <script>
+	import headerTitle from "../../components/headerTitle.vue"
 	import recommendItem from './recommendItem.vue';
 	export default {
 		data() {
@@ -34,7 +31,7 @@
 			}
 		},
 		components:{
-			recommendItem
+			recommendItem,headerTitle
 		},
 		onLoad() {
 			uni.request({
@@ -75,22 +72,5 @@
 	}
 	.uni-media-list-text-top{
 		line-height: 1.6em;
-	}
-	.header {
-		position: fixed;
-		top: 0;right: 0;left: 0;
-		height: 80rpx;
-		width: 100%;
-		display: flex;
-		box-sizing: border-box;
-		align-items: center;
-		background-color: #fff;
-		box-shadow: 0px 4px 8px 0px rgba(238, 238, 238, 0.5);
-		z-index: 1;
-	}
-	.header-content {
-		flex: 1;
-		font-size: 36rpx;
-		text-align: center;
 	}
 </style>

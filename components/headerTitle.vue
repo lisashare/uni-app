@@ -1,12 +1,12 @@
 <template>
 	<view class="header">
-		<view class="header-left" @click="goback()">
+		<view class="header-left" @click="goback()" v-if="showback">
 			<image src="../../static/icon_back@3x.png" mode=""></image>
 		</view>
 		<view class="header-content uni-ellipsis">
 			{{title}}
 		</view>
-		<view class="header-right">
+		<view class="header-right" v-if="showback">
 			<!-- <image src="../../static/images/search.png" mode=""></image> -->
 		</view>
 	</view>
@@ -14,7 +14,13 @@
 
 <script>
 	export default {
-		props: ["title"],
+		props: {
+			"title": String,
+			"showback": {
+				type: Boolean,
+			    default: true
+			} 
+		},
 		data() {
 			return {}
 		},
@@ -36,10 +42,11 @@
 		width: 100%;
 		display: flex;
 		box-sizing: border-box;
+		justify-content: center;
 		align-items: center;
 		background-color: #fff;
 		box-shadow: 0px 4px 8px 0px rgba(238, 238, 238, 0.5);
-		z-index: 1;
+		z-index: 11;
 	}
 	.header image{
 		width: 24rpx;
