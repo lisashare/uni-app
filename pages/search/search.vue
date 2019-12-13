@@ -75,16 +75,8 @@
 				searchTemporary: false, // 正在输入中
 				showEmpty: false, // 搜索结果为空
 				showSearchResult: false, // 显示搜索结果
-				searchResultList: [ //  搜索结果列表
-					{
-						name: "二零三"
-					}
-				],
-				storageList: [ // 本地存储列表
-					{
-						first: "啦啦啦啦"
-					}
-				],
+				searchResultList: [], //  搜索结果列表
+				storageList: [], // 本地存储列表
 				showStorage: false, // 显示本地存储
 				showHot: true, // 显示热搜
 				searchTemporaryList: [
@@ -133,14 +125,15 @@
 			// 进入页面 请求
 			// uni.request({
 			// 	method: "GET",
-			//     url: '', 
+			//     // url: 'http://localhost:3000/search?keywords=1', 
+			//     url: 'https://unidemo.dcloud.net.cn/api/news', 
 			//     data: {},
 			//     // header: {},
 			//     success: (res) => {
 			//         console.log(res);
-			//         // this.text = 'request success';
 			//     }
 			// });
+	
 			this.getHistoryItems();
 		},
 		methods: {
@@ -197,7 +190,7 @@
 				}
 			},
 			getHistoryItems: function() { // 获取历史列表
-			  var history = utils.getStore('searchHistory');
+			  var history = utils.storageUtils.getStore('searchHistory');
 			  if (!(history && history.length)) {
 				return false
 			  }
@@ -208,7 +201,7 @@
 			  }
 			},
 			searchTarget: function() { // 存储搜索目标
-				var history = utils.getStore('searchHistory')
+				var history = utils.storageUtils.getStore('searchHistory')
 			    // console.log(history);
 				var inputValueObj = {};
 			    if (history && history.length && this.inputValue) {
@@ -226,10 +219,10 @@
 					inputValueObj.first = this.inputValue;
 					this.storageList.unshift(inputValueObj)
 			    }
-			    utils.setStore('searchHistory', this.storageList)
+			    utils.storageUtils.setStore('searchHistory', this.storageList)
 			},
 			delStorage: function(str){
-				var history = utils.getStore('searchHistory');
+				var history = utils.storageUtils.getStore('searchHistory');
 				var delReault = [];
 				history.forEach((item) => {
 				  if (item.first == str) {
@@ -239,7 +232,7 @@
 				  }
 				})
 				this.storageList = delReault;
-				utils.setStore('searchHistory', delReault)
+				utils.storageUtils.setStore('searchHistory', delReault)
 			},
 			onPageScroll: function(){
 				
@@ -251,6 +244,7 @@
 
 <style>
 	.m-input {
+		box-sizing: border-box;
 	    padding: 15px 10px;
 		display: block;
 	}

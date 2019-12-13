@@ -1,6 +1,20 @@
 <template>
 	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
+		<swiper class="swiper-wrapper" :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000">
+			<swiper-item>
+				<view class="swiper-item"><image src="/static/banner/IMG_2369.JPG"></image></view>
+			</swiper-item>
+			<swiper-item>
+				<view class="swiper-item"><image src="/static/banner/IMG_2370.JPG"></image></view>
+			</swiper-item>
+			<swiper-item>
+				<view class="swiper-item"><image src="/static/banner/IMG_2371.JPG"></image></view>
+			</swiper-item>
+			<swiper-item>
+				<view class="swiper-item"><image src="/static/banner/IMG_2372.JPG"></image></view>
+			</swiper-item>
+		</swiper>
+		
 		<view class="text-area">
 			<text class="title">{{title}}</text>
 		</view>
@@ -30,16 +44,14 @@
 		align-items: center;
 		justify-content: center;
 	}
-
-	.logo {
-		height: 200rpx;
-		width: 200rpx;
-		margin-top: 200rpx;
-		margin-left: auto;
-		margin-right: auto;
-		margin-bottom: 50rpx;
+	.swiper-wrapper{
+		width: 100%;
+		height: 216px;
+		
 	}
-
+	image{
+		width: 100%;
+	}
 	.text-area {
 		display: flex;
 		justify-content: center;
