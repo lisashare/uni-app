@@ -21,4 +21,26 @@
 		display: none;
 	}
 	/* #endif */
+	image{
+		width: 100%;
+	}
+	a, a:visited {
+	    color: #333;
+	}
+	a, del, ins, s, u{
+		text-decoration: none;
+	}
+	a, button {
+	    cursor: pointer;
+	}
+	
+	
+	
+	
+	.f-thide {
+	    overflow: hidden;
+	    text-overflow: ellipsis;
+	    white-space: nowrap;
+	    word-break: normal;
+	}
 </style>
