@@ -1,5 +1,3 @@
-import './modules/rem'
-import './stylesheets/main.css'
 
 import Vue from 'vue'
 import App from './App'

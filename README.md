@@ -37,9 +37,26 @@ https://github.com/qqlcx5/uniapp/blob/master/components/header.vue
 
 -------
 
-非H5端暂不支持在自定义组件上使用 Class 与 Style 绑定
-
 uni-app input 回车搜索写法
 ```
 <input confirm-type="search" @confirm="search()">
 ```
+
+### app
+
+本地存储需要使用[uni.setStorage](https://uniapp.dcloud.io/api/storage/storage?id=setstorage)
+不能使用window，window在H5中生效，其它平台不生效
+
+### 小程序
+
+微信小程序不支持相对路径（真机不支持，开发工具支持）
+
+非H5端暂不支持在自定义组件上使用 Class 与 Style 绑定
+
+### ???
+
+不同环境更换请求地址的方法???
+
+
+
+

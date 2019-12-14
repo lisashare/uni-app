@@ -6,7 +6,6 @@
 		<!-- #endif -->
 		<view class="uni-list">
 			<view class="uni-list-cell" hover-class="uni-list-cell-hover" v-for="(item,index) in newsList" :key="index" @tap="openInfo" :data-newsid="item.post_id">
-				<!-- <navigator url="">一种跳转方式</navigator> -->
 				<view class="uni-media-list">
 					<image class="uni-media-list-logo" :src="item.author_avatar"></image>
 					<view class="uni-media-list-body">
@@ -34,12 +33,16 @@
 			recommendItem,headerTitle
 		},
 		onLoad() {
+			uni.showLoading({
+				title: '加载中...'
+			})
 			uni.request({
 				url: 'https://unidemo.dcloud.net.cn/api/news',
 				method: 'GET',
 				data: {},
 				success: res => {
-					this.newsList = res.data
+					this.newsList = res.data;
+					uni.hideLoading()
 				},
 				fail: () => {},
 				complete: () => {}
