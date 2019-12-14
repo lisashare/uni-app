@@ -16,7 +16,7 @@
 						<view class="m-hotlist" v-show="showHot">
 							<view class="title">热门搜索</view>
 							<view class="list">
-								<view class="item f-bd f-bd-full" v-for="(item, index) of hotSearchList" :key="index" @click="search(item.title)"><a class="link" href="javascript:void(0);">{{item.title}}</a></view>
+								<view class="item f-bd f-bd-full" v-for="(item, index) of hotSearchList" :key="index" @click="search(item.title)">{{item.title}}</view>
 							</view>
 						</view>
 						<view class="m-history" v-show="showStorage">
@@ -66,7 +66,6 @@
 </template>
 
 <script>
-	import utils from '../../modules/utils.js';
 	export default {
 		data() {
 			return {
@@ -190,7 +189,13 @@
 				}
 			},
 			getHistoryItems: function() { // 获取历史列表
-			  var history = utils.storageUtils.getStore('searchHistory');
+				var history = '';
+				uni.getStorage({
+					key: 'searchHistory',
+					success: function (res) {
+						history = res.data;
+					}
+				})
 			  if (!(history && history.length)) {
 				return false
 			  }
@@ -201,8 +206,13 @@
 			  }
 			},
 			searchTarget: function() { // 存储搜索目标
-				var history = utils.storageUtils.getStore('searchHistory')
-			    // console.log(history);
+				var history = '';
+				uni.getStorage({
+					key: 'searchHistory',
+					 success: function (res) {
+						history = res.data;
+					}
+				})
 				var inputValueObj = {};
 			    if (history && history.length && this.inputValue) {
 					var checkrepeat = false
@@ -219,10 +229,19 @@
 					inputValueObj.first = this.inputValue;
 					this.storageList.unshift(inputValueObj)
 			    }
-			    utils.storageUtils.setStore('searchHistory', this.storageList)
+				uni.setStorage({
+					key: 'searchHistory',
+				    data: this.storageList
+				})
 			},
 			delStorage: function(str){
-				var history = utils.storageUtils.getStore('searchHistory');
+				var history = '';
+				uni.getStorage({
+					key: 'searchHistory',
+				    success: function (res) {
+						history = res.data;
+					}
+				})
 				var delReault = [];
 				history.forEach((item) => {
 				  if (item.first == str) {
@@ -232,7 +251,10 @@
 				  }
 				})
 				this.storageList = delReault;
-				utils.storageUtils.setStore('searchHistory', delReault)
+				uni.setStorage({
+					key: 'searchHistory',
+				    data: this.storageList
+				})
 			},
 			onPageScroll: function(){
 				
@@ -264,7 +286,7 @@
 	.inputcover .icon-search{
 	    position: absolute;
 	    left: 0;
-	    top: 4px;
+	    top: 0;
 	    margin: 0 8px;
 	    vertical-align: middle;
 	}
